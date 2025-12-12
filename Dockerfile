@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
 RUN /build/usr/bin/python3.10 -m ensurepip \
     && /build/usr/bin/python3.10 -m pip install --upgrade pip setuptools wheel;
 
-RUN curl -L -O https://archive.chirpmyradio.com/chirp_next/next-20251212/chirp-20251212-py3-none-any.whl && \
+RUN curl -L -O -A "Mozilla/5.0" https://archive.chirpmyradio.com/chirp_next/next-20251212/chirp-20251212-py3-none-any.whl && \
     /build/usr/bin/python3.10 -m pip install --prefix=/build/usr chirp-20251212-py3-none-any.whl && \
     sed -i '1d' /build/usr/bin/chirp;
 
