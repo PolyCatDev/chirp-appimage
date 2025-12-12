@@ -28,4 +28,4 @@ jobs:
         with:
           file: "dist/*"
           tags: true
-          draft: true
+          draft: false
