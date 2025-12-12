@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 set -ueo pipefail
 
@@ -14,4 +14,13 @@ curl -L -o appimagetool.AppImage \
 chmod +x appimagetool.AppImage
 ARCH=x86_64 ./appimagetool.AppImage build/ dist/Chirp-x86_64.AppImage
 chmod +x dist/Chirp-x86_64.AppImage
-rm -rf appimagetool.AppImage build
+
+NO_CLEANUP=false
+
+if [[ "${1:-}" == "--no-cleanup" ]]; then
+    NO_CLEANUP=true
+fi
+
+if [ "$NO_CLEANUP" = false ]; then
+    rm -rf appimagetool.AppImage build
+fi
