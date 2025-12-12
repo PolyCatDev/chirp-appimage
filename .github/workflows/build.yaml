@@ -21,12 +21,11 @@ jobs:
       - name: Build Appimage
         run: chmod +x ./buildapp.sh && ./buildapp.sh --no-cleanup
       
-      - name: Create Release and Upload Asset
+      - name: Upload Release
+        uses: xresloader/upload-to-github-release@v1
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh release create $GITHUB_REF_NAME dist/*.AppImage \
-            --title "Release $GITHUB_REF_NAME" \
-            --notes "Automated release from workflow" \
-            --draft
-
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          file: "dist/*"
+          tags: true
+          draft: true
