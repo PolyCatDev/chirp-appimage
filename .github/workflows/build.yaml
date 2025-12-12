@@ -18,7 +18,7 @@ jobs:
         run: sudo apt install -y curl fuse libfuse2
 
       - name: Build Appimage
-        run: chmod +x ./buildapp.sh && ./buildapp.sh
+        run: chmod +x ./buildapp.sh && ./buildapp.sh --no-cleanup
       
       - name: Upload Release
         uses: xresloader/upload-to-github-release@v1
