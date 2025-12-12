@@ -3,6 +3,8 @@ name: Build Appimage
 on:
   push:
     branches: [main]
+    tags:
+      - "*"
     paths-ignore:
       - '**/*.md'
 
