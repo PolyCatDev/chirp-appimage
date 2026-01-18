@@ -28,8 +28,8 @@ RUN apt-get update && apt-get install -y \
 RUN /build/usr/bin/python3.10 -m ensurepip \
     && /build/usr/bin/python3.10 -m pip install --upgrade pip setuptools wheel;
 
-RUN lynx -source "https://archive.chirpmyradio.com/chirp_next/next-20251219/chirp-20251219-py3-none-any.whl" > chirp-20251219-py3-none-any.whl && \
-    /build/usr/bin/python3.10 -m pip install --prefix=/build/usr chirp-20251219-py3-none-any.whl && \
+RUN lynx -source "https://archive.chirpmyradio.com/chirp_next/next-20260116/chirp-20260116-py3-none-any.whl" > chirp-20260116-py3-none-any.whl && \
+    /build/usr/bin/python3.10 -m pip install --prefix=/build/usr chirp-20260116-py3-none-any.whl && \
     sed -i '1d' /build/usr/bin/chirp;
 
 RUN /build/usr/bin/python3.10 -m pip install attrdict3;
