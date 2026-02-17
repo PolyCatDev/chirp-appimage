@@ -2,8 +2,8 @@ FROM debian:bookworm
 
 WORKDIR /
 
-ARG WHEEL_URL="https://files.catbox.moe/8nas2z.whl"
-ARG WHEEL_NAME="chirp-20260206-py3-none-any.whl"
+ARG WHEEL_URL="https://files.catbox.moe/v601ef.whl"
+ARG WHEEL_NAME="chirp-20260213-py3-none-any.whl"
 
 # Install build dependencies
 RUN apt update && apt install -y \
